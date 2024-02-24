@@ -257,7 +257,7 @@ def make_gov_approve_word(data):
         r"送审预算单位": "送审预算编制单位",
         r"大写造价" : "大写造价",
         r"委托书编号" : "委托书编号",
-        r"鑫诚报告号" : "鑫诚报告号",
+        r"评审公司报告号" : "评审公司报告号",
         r"评审范围内容" : "评审范围内容",
         r"批复资金来源" : "批复资金来源",
     }      
@@ -282,7 +282,7 @@ def make_gov_approve_word(data):
     value=str(data.iloc[0]['委托书编号'])[-4:-1] 
     current_dir=os.getcwd()
     os.makedirs('out',exist_ok=True)
-    file_fullpath=os.path.join(current_dir,'out', formatted_date+'-委'+value+'-关于'+row["工程名称"]+'预算的评审意见-鑫诚国际'+'.docx')
+    file_fullpath=os.path.join(current_dir,'out', formatted_date+'-委'+value+'-关于'+row["工程名称"]+'预算的评审意见-某国际'+'.docx')
     doc.save(file_fullpath)
     print('文件已经保存至'+file_fullpath)
 
@@ -302,7 +302,7 @@ def make_report_word(data):
         r"设计公司": "设计单位",
         r"送审预算单位": "送审预算编制单位",
         r"委托书编号" : "委托书编号",
-        r"鑫诚报告号" : "鑫诚报告号",
+        r"评审公司报告号" : "评审公司报告号",
         r"评审范围内容" : "评审范围内容",
         r"批复资金来源" : "批复资金来源",
     }      
@@ -333,7 +333,7 @@ def make_reportface_word(data):
     replacements = {
         r"评审工程名": "工程名称",
         r"出报告时间": "大写报告时间",
-        r"鑫诚报告号" : "鑫诚报告号",
+        r"评审公司报告号" : "评审公司报告号",
     }      
     doc1 = Document(r'.\template_gushi\6_1封面模板.docx') 
     doc2 = Document(r'.\template_gushi\6_2扉页模板.docx')   
